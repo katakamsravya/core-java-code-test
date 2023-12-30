@@ -1,0 +1,47 @@
+package com.anp.Test;
+
+import java.util.Scanner;
+
+public class ReverseString {
+	
+  public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       Scanner S= new Scanner(System.in);//scanner class is created to give user inputs
+       try {
+    	   //we will risky lines of code
+       System.out.println("enter a string:");
+       String input = S.nextLine(); 
+       
+      
+           String reversed=reverseString(input);
+           System.out.println("reversed string: " + reversed);
+        	   
+           }
+       catch (NullPointerException e) {
+           System.out.println("Error: Input string is null.");
+       } catch (StringIndexOutOfBoundsException e) {
+           System.out.println("Error: Input string is empty.");
+       }
+      
+	}
+
+private static String reverseString(String str) {
+	// TODO Auto-generated method stub
+	if (str == null) {
+        throw new NullPointerException();
+    }
+    if (str.isEmpty()) {
+        throw new StringIndexOutOfBoundsException();
+    }
+	StringBuilder r = new StringBuilder();
+	//foreach loop is used to retrieve the string elements
+	for(int i = str.length() -1; i>=0;i--) {
+		r.append(str.charAt(i));
+	}
+	return r.toString();
+}
+
+
+
+
+}
